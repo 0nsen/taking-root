@@ -1,0 +1,57 @@
+.navbar-container {
+    height: 8em;
+    margin: -0.5em;
+    background-color: lightgreen;
+}
+
+.navbar-top-row {
+    border: yellow solid;
+    height: 3em;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart, .login {
+    border: red dotted;
+    width: 5%;
+    margin: 0 1em;
+}
+
+#navbar-logo {
+    border: black solid;
+    width: 20%;
+    height: 5em;
+}
+
+.navbar-right {
+    position: relative;
+    float: right;
+    top: -5em;
+    width: 40%;
+    height: 5em;
+    border: black dotted;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-items {
+    height: 100%;
+    width: 60%;
+    border: purple solid 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    padding: 1em;
+    width: 33.3%;
+    font-size: 1.3em;
+    text-align: center;
+    border: red solid;
+}
+
+.searchbar {
+    width: 40%;
+    height: 100%;
+    border: black solid;
+}
