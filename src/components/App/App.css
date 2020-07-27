@@ -1,0 +1,85 @@
+.shop-banner {
+    background-image: url("shallow-focus-photography-of-green-leafed-plants-1207966.jpg");
+    margin: -53px -8px 5px -8px;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    color: white;
+}
+
+.shop-banner h2 {
+    position: relative;
+    display: block;
+    top: 3em;
+    color: rgb(255, 255, 255);
+    font-size: 4em;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    text-align: center;
+}
+
+.shop-banner button {
+    position: relative;
+    display: block;
+    width: 10%;
+    height: 10%;
+    border-radius: 10px;
+    outline: none;
+    border: white solid 1px;
+    background-color: transparent;
+    font-size: 2vw;
+    color: white;
+    cursor: pointer;
+    margin: 7em auto;
+}
+
+.shop-banner button:hover {
+    background-color: rgba(61, 187, 61, 0.5);
+}
+
+.new-arrivals {
+    height: 35em;
+    border: green solid;
+    text-align: center;
+}
+
+.new-arrivals h1 {
+    border-bottom: rgb(0, 0, 0) solid 1px;
+    height: 15%;
+    padding-top: 0.6em;
+    margin: auto;
+    width: 80%;
+}
+
+.showcase {
+    display: flex;
+    justify-content: center;
+    height: 85%;
+}
+
+.shop-section {
+    position: relative;
+    top: 0;
+    display: grid;
+    border: red solid;
+    height: 150vh;
+    width: 98vw;
+    grid-template-columns: 10% 35% 10% 35% 10%;
+    grid-template-rows: repeat(3, 13%) 100px repeat(3, 13%);
+}
+
+.container-shop {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 3;
+    border: blue solid;
+}
+
+.container-shop img {
+    width: 100%;
+    height: auto;
+}
+
+.weirdos-shop {
+    border: green solid;
+    grid-column: 4 / span 1;
+    grid-row: 5 / span 3;
+}

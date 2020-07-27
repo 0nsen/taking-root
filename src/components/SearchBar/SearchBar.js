@@ -4,9 +4,10 @@ import './SearchBar.css';
 class SearchBar extends React.Component {
     render() {
         return (
-            <form method="POST">
-                <input type="text" placeholder="Search"/>
-            </form>
+            <div className="searchbar-container">
+                <input type="text" placeholder="Search..."/>
+                <button type="submit"><i className="material-icons">search</i></button>
+            </div>
         )
     }
 }

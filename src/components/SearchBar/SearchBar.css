@@ -1,0 +1,42 @@
+.searchbar-container {
+    margin-left: 2em;
+    display: flex;
+}
+
+.searchbar-container input {
+    height: 50%;
+    margin: 1.2em 0;
+    border: 1.5px white solid;
+    border-right: none;
+    outline: none;
+    background-color: rgb(150, 201, 153);
+}
+
+.searchbar-container input:focus {
+    color: white;
+}
+
+.searchbar-container button {
+    height: 50%;
+    width: 2.5em;
+    margin: 1.2em 0;
+    margin-right: 1em;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1.5px white solid;
+    border-left: none;
+}
+
+.searchbar-container button i {
+    color: white;
+    vertical-align: middle;
+}
+
+.searchbar-container input::placeholder {
+    color: white;
+}
+
+.searchbar-container input:focus::placeholder {
+    color: black;
+}

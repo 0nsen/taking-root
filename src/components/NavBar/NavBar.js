@@ -10,20 +10,14 @@ class NavBar extends React.Component {
             <div className="navbar-container">
                 <div className="navbar-top-row">
                     <div className="cart">CART</div>
-                    <div className="login">LOGIN</div>
+                    <Login />
                 </div>
-
-                <div id="navbar-logo">
-                    <a href="/"><img src="placeholder" alt="Taking Root"/></a>
-                </div>
-
-                <div class="navbar-right">
-                    <div id="nav-items">
-                        <span className="item"><a href="placeholder">Shop</a></span>
-                        <span className="item"><a href="placeholder">About</a></span>
-                        <span className="item"><a href="placeholder">Contact</a></span>
-                    </div>
-                    <div className="searchbar">SEARCHBAR</div>
+                <a className="navbar-logo" href="/"><img src="placeholder" alt="Home"/><h1>Taking Root</h1></a>
+                <div className="navbar-bottom-row">
+                    <a id="shop" href="placeholder">SHOP</a>
+                    <a id="about" href="placeholder">ABOUT</a>
+                    <a id="contact" href="placeholder">CONTACT</a>
+                    <SearchBar />
                 </div>
             </div>
         )
