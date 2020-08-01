@@ -10,6 +10,8 @@
     border-right: none;
     outline: none;
     background-color: rgb(150, 201, 153);
+    font-family: 'Roboto', sans-serif;
+    padding-left: 0.5em;
 }
 
 .searchbar-container input:focus {
@@ -33,10 +35,15 @@
     vertical-align: middle;
 }
 
+.searchbar-container button i:hover {
+    background-color: rgb(82, 162, 87);
+}
+
 .searchbar-container input::placeholder {
     color: white;
+    padding-left: 0.5em;
 }
 
 .searchbar-container input:focus::placeholder {
-    color: black;
+    color: transparent;
 }

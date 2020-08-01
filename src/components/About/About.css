@@ -1,0 +1,9 @@
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    border-bottom: black solid 2px;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    margin: 1em 15% 1em 15%;
+}

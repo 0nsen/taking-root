@@ -1,8 +1,7 @@
 .shop-banner {
     background-image: url("shallow-focus-photography-of-green-leafed-plants-1207966.jpg");
-    margin: -53px -8px 5px -8px;
+    font-family: 'Roboto', sans-serif;
     background-size: cover;
-    position: relative;
     height: 100vh;
     color: white;
 }
@@ -11,7 +10,6 @@
     position: relative;
     display: block;
     top: 3em;
-    color: rgb(255, 255, 255);
     font-size: 4em;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
     text-align: center;

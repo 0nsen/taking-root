@@ -1,9 +1,3 @@
-.navbar-container {
-    margin: -0.5em;
-    height: 6em;
-    background-color: rgb(150, 201, 153);
-}
-
 .navbar-top-row {
     background-color: rgb(82, 162, 87);
     height: 2em;
@@ -18,50 +12,34 @@
 }
 
 .navbar-bottom-row {
-    width: 80%;
+    width: 100%;
     height: 4em;
+    background-color: rgb(150, 201, 153);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+#shop-name {
+    display: inline-block;
+    border: green solid;
+    width: 20%; 
+    height: 100%;
+    margin: 0;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2.4em;
+    padding-top: 0.3em;
+    padding-left: 0.3em;
+}
+
+.navbar-bottom-right {
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
     float: right;
     display: flex;
     justify-content: flex-end;
 }
 
-.navbar-logo {
-    border-right: black solid;
-    display: inline-block;
-    width: 20%;
-    height: 4em;
-}
-
-.navbar-logo img {
-    border: red solid;
-    display: inline-block;
-    height: 4em;
-    width: 30%;
-    float: left;
-}
-
-.navbar-logo h1 {
-    display: inline-block;
-    border: green solid;
-    width: 70%;
-    height: 2em;
-    margin: 0;
-    font-family: 'Berkshire Swash', cursive;
-    font-size: 2.4em;
-    padding-top: 0.2em;
-}
-
-.navbar-bottom-row a {
-    margin-left: 2em;
-    width: 10%;
-    text-align: center;
-    padding: 1.2em 0;
-    text-decoration: none;
-    font-size: 1.1em;
-    color: white;
-}
-
-.navbar-bottom-row a:hover {
+.navbar-bottom-right h1:hover {
     color: black;
 }
 

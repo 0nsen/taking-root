@@ -1,9 +1,18 @@
 footer {
-    width: 101%;
+    width: 100%;
     margin: 0 -8px 0 -8px;
     bottom: 0;
     display: flex;
     justify-content: space-around;
     background-color: black;
     color: white;
+    padding: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
+
+footer h5 {
+    margin-top: 1em;
+    font-weight: 300;
+}
+
