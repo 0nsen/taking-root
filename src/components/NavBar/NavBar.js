@@ -2,7 +2,6 @@ import React from 'react';
 import './NavBar.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import Cart from '../Cart/Cart.js';
-import Login from '../Login/Login.js';
 import {Link} from 'react-router-dom';
 
 class NavBar extends React.Component {
@@ -15,28 +14,27 @@ class NavBar extends React.Component {
             textDecoration: 'none',
             fontSize: '1.1em',
             color: 'white',
-            cursor: 'pointer',
-            textDecoration: 'none',
+            cursor: 'pointer'
         }
 
         return (
-            <div className="navbar-container">
-                <div className="navbar-top-row">
+            <nav>
+                <div className="navbar__top">
                     <div className="cart">CART</div>
-                    <Login />
+                    <Link to='/login' style={{marginRight: '2em', width: '5%'}}><button className="login">LOGIN</button></Link>
                 </div>
                 
-                <div className="navbar-bottom-row">
-                    <h1 id="shop-name">Taking Root</h1>
+                <div className="navbar__bottom">
+                    <Link to='/' style={{color: 'white'}}><h1 id="shop-name">Taking Root</h1></Link>
                     
-                    <div className="navbar-bottom-right">
+                    <div className="navbar__bottom--right">
                         <Link to='/' style={style}><h1>SHOP</h1></Link>
                         <Link to='/about' style={style}><h1>ABOUT</h1></Link>
                         <Link to='/contact' style={style}><h1>CONTACT</h1></Link>
                         <SearchBar />
                     </div>
                 </div>
-            </div>
+            </nav>
         )
     }
 }

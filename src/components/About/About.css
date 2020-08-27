@@ -1,9 +1,55 @@
 .page-title {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
-    border-bottom: black solid 2px;
+    border-bottom: rgb(150, 201, 153) solid 2px;
     height: 2em;
     display: flex;
     align-items: center;
     margin: 1em 15% 1em 15%;
+}
+
+.paragraph {
+    margin: 0 15%;
+    margin-bottom: 3em;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 2em;
+}
+
+.paragraph a {
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(150, 201, 153);
+}
+
+.paragraph a:hover {
+    color: rgb(82, 162, 87);
+    font-size: 1.01em;
+}
+
+.paragraph h3 {
+    font-size: 1.2em;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.paragraph em {
+    color: red;
+    font-style: italic;
+}
+
+em {
+    font-style: italic;
+}
+
+li span {
+    color: rgb(150, 201, 153);
+}
+
+li span:hover {
+    color: rgb(82, 162, 87);
+    font-size: 1.01em;
 }

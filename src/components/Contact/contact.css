@@ -1,0 +1,72 @@
+section.contact {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 0 15% 3em 15%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.contact__info {
+    margin-top: 2em;
+    width: 50%;
+    margin-right: 1em;
+}
+
+.contact__form {
+    width: 50%;
+    margin-left: 1em;
+    font-weight: 500;
+}
+
+.contact__form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact__form form label {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.contact__form form input {
+    height: 2rem;
+    background-color: rgb(217, 233, 215);
+    border: none;
+    outline: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.contact__form form select {
+    height: 2rem;
+    background-color: rgb(217, 233, 215);
+    border: none;
+    outline: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.contact__form form textarea {
+    outline: none;
+    background-color: rgb(217, 233, 215);
+    border: none;
+    padding: 1em 1em 1em 1em;
+}
+
+.contact__form button {
+    margin-top: 2em;
+    height: 3em;
+    width: 20%;
+    cursor: pointer;
+    background-color: rgb(150, 201, 153);
+    border: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.contact__form button:hover {
+    background-color: rgb(82, 162, 87);
+}

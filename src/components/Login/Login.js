@@ -1,39 +1,30 @@
 import React from 'react';
 import './Login.css';
-import NavBar from '../NavBar/NavBar.js';
-import Footer from '../Footer/Footer.js';
-import {Link, Route} from 'react-router-dom';
+import '../About/About.css'
 
 class Login extends React.Component {
     render() {
         return (
-            <div className="login">
-                <button><Link to='/login'>LOGIN</Link></button>
-                <Route path='/login' exact component={login} />
+            <div>
+                <h1 className="page-title">CUSTOMER LOGIN</h1>
+
+                <form className="login-form">
+                    <label id="email-label" for='email'>EMAIL</label>
+                    <input id="email" type="text" required />
+
+                    <div id="password-line">
+                        <label for='password'>PASSWORD</label>
+                        <h6><em>Forgot your password?</em></h6>
+                    </div>
+                    <input id='password' type='password' required/>
+                    <div id="submit-line">
+                        <button type="submit">LOGIN</button>
+                        <h6>New customer? <span>Sign up!</span></h6>
+                    </div>
+                </form>
             </div>
-        )
+        );
     }
 }
-
-const login = () => (
-    <div>
-        <NavBar />
-
-        <h1>CUSTOMER LOGIN</h1>
-        <form>
-            <label for="email">EMAIL</label>
-            <input type="text" id="email"/>
-
-            <label for="passwod">PASSWORD</label>
-            <a>Forgot your password?</a>
-            <input type="password" id="password"/>
-            
-            <h6>New Customer?</h6>
-            <a>Sign up</a>
-        </form>
-
-        <Footer />
-    </div>
-);
 
 export default Login;

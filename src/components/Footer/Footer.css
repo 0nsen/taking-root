@@ -1,11 +1,10 @@
 footer {
     width: 100%;
-    margin: 0 -8px 0 -8px;
     bottom: 0;
     display: flex;
     justify-content: space-around;
-    background-color: black;
-    color: white;
+    background-color: rgb(29, 32, 29);
+    color: rgb(159, 175, 160);
     padding: 4em;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -14,5 +13,11 @@ footer {
 footer h5 {
     margin-top: 1em;
     font-weight: 300;
+}
+
+footer h5:hover {
+    font-size: 1.01em;
+    color: white;
+    cursor: pointer;
 }
 
