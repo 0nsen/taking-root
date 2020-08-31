@@ -1,6 +1,7 @@
 .searchbar-container {
     margin-left: 2em;
     display: flex;
+    height: 4rem;
 }
 
 .searchbar-container input {

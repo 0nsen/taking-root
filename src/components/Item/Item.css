@@ -1,22 +1,99 @@
 .product-page {
-    border: red solid 1px;
     width: 70%;
-    margin: auto auto;
     height: 500px;
+    margin: 4rem auto;
+    font-family: 'Roboto', sans-serif;
 }
 
 .product-image {
-    border: blue solid 1px;
     width: 48%;
     height: 100%;
     display: inline-block;
 }
 
+.product-image img {
+    max-width: auto;
+    max-height: 500px;
+}
+
 .product-info {
-    border: green solid 1px;
     width: 48%;
-    height: 100%;
+    height: 70%;
     float: right;
     display: flex;
-    
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-size: 1.7rem;
+    padding-bottom: 20px;
+    border-bottom: rgb(150,201,153) solid 1px;
+}
+
+.product-info h3 {
+    font-size: 1.7rem;
+    font-weight: 300;
+}
+
+.sizes {
+    height: 5rem;
+}
+
+.sizes h5 {
+    margin-bottom: 1.5rem;
+}
+
+.sizes input {
+    /* Don't use "display: none" or "visibility: hidden"
+    It makes choosing by keyboard unusable */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sizes label {
+    border: rgb(226,226,226) solid 1px;
+    margin-right: 0.2rem;
+    padding: 10px 10px;
+    font-size: 0.7rem;
+}
+
+.sizes label:hover {
+    cursor: pointer;
+}
+
+.sizes label[for="2inch"] {
+    margin-left: -0.5rem;
+}
+
+.sizes input:checked + label {
+    border: black 1.5px solid;
+    border-radius: 5px;
+}
+
+.quantity h5 {
+    margin-bottom: 1rem;
+}
+
+.quantity input {
+    text-align: center;
+    height: 3rem;
+    font-size: 1rem;
+}
+
+.add-to-cart {
+    width: 40%;
+    height: 3rem;
+    border: rgb(150,201,153) solid 1px;
+    color: rgb(150,201,153);
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    transition: linear 0.2s;
+}
+
+.add-to-cart:hover {
+    background: rgb(150,201,153);
+    color: white;
+    cursor: pointer;
 }

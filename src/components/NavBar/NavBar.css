@@ -52,15 +52,31 @@ button.login:hover {
     justify-content: flex-end;
 }
 
-.navbar__bottom--right h1 {
+.navbar__bottom--right h1, .shop-dropdown {
     display: block;
     padding: 1.3em;
     margin-top: -1.3em;
     margin-bottom: -1.3em;
 }
 
-.navbar__bottom--right h1:hover {
+.navbar__bottom--right h1:hover, .shop-dropdown:hover {
     color: black;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.shop-dropdown {
+    height: 4rem;
+    margin-top: 0;
+    z-index: 999;
+}
+
+.shop-dropdown:hover .dropdown-content {
+    display: block;
+    margin-top: 1.4rem;
+    background-color: rgba(113, 196, 118, 0.9);
 }
 
 
