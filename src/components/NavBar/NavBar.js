@@ -9,13 +9,23 @@ class NavBar extends React.Component {
         const style = {
             marginLeft: '2em',
             width: '10%',
+            height: '4rem',
             textAlign: 'center',
             padding: '1.3em 0',
             textDecoration: 'none',
             fontSize: '1.1em',
             color: 'white',
-            cursor: 'pointer'
-        }
+        };
+
+        const dropdownStyle = {
+            display: 'block',
+            height: '4rem',
+            width: '100%',
+            marginTop: '-1.4rem',
+            textDecoration: 'none',
+            color: 'white',
+            fontSize: '1.1em',
+        };
 
         return (
             <nav>
@@ -28,20 +38,18 @@ class NavBar extends React.Component {
                     <Link to='/' style={{color: 'white'}}><h1 id="shop-name">Taking Root</h1></Link>
                     
                     <div className="navbar__bottom--right">
-                        <div style={style} className="shop-dropdown">
-                            <h1 id="shop">SHOP</h1>
+                        <div className="shop-dropdown">
+                            <Link to='/all-collections' style={dropdownStyle}><h1>SHOP</h1></Link>
                             <div className="dropdown-content">
                                 <h1>Aeonium</h1>
                                 <h1>Cactus</h1>
                                 <h1>Sedum</h1>
                                 <h1>Unsual Species</h1>
-                                <h1>Unsual Species</h1>
-                                <h1>Unsual Species</h1>
                             </div>
                         </div>
                         
-                        <Link to='/about' style={style}><h1>ABOUT</h1></Link>
-                        <Link to='/contact' style={style}><h1>CONTACT</h1></Link>
+                        <Link to='/about' style={style}><h1 className="navbar-item">ABOUT</h1></Link>
+                        <Link to='/contact' style={style}><h1 className="navbar-item"> CONTACT</h1></Link>
                         <SearchBar />
                     </div>
                 </div>

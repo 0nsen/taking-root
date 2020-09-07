@@ -7,7 +7,7 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="shop-banner">
-                    <h2>Hundreds of <br/><em>succulents</em> at your <br/>green thumb</h2>
+                    <h2>Organically grown <br/> SUCCULENTS</h2>
                     <button>Shop</button>
                 </div>
 

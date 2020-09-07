@@ -52,32 +52,37 @@ button.login:hover {
     justify-content: flex-end;
 }
 
-.navbar__bottom--right h1, .shop-dropdown {
-    display: block;
-    padding: 1.3em;
-    margin-top: -1.3em;
-    margin-bottom: -1.3em;
+.navbar__bottom--right h1:hover {
+    color: black;
 }
 
-.navbar__bottom--right h1:hover, .shop-dropdown:hover {
-    color: black;
+.navbar__bottom--right h1 {
+    height: 4rem;
+    padding: 1.4rem 0;
+}
+
+.navbar-item {
+    margin-top: -1.5rem;
+}
+
+.shop-dropdown {
+    z-index: 99;
+    width: 10%;
+    text-align: center;
+    padding: 1.3rem 0;
+    border: red solid 1px;
+    height: 4rem;
 }
 
 .dropdown-content {
     display: none;
 }
 
-.shop-dropdown {
-    height: 4rem;
-    margin-top: 0;
-    z-index: 999;
-}
-
 .shop-dropdown:hover .dropdown-content {
     display: block;
-    margin-top: 1.4rem;
-    background-color: rgba(113, 196, 118, 0.9);
+    background-color: rgba(133, 201, 138, 0.9);
+    color: white;
+    font-size: 0.8rem;
 }
-
 
 

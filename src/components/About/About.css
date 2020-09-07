@@ -36,11 +36,6 @@ strong {
     font-weight: 500;
 }
 
-.paragraph em {
-    color: red;
-    font-style: italic;
-}
-
 em {
     font-style: italic;
 }
@@ -52,4 +47,9 @@ li span {
 li span:hover {
     color: rgb(82, 162, 87);
     font-size: 1.01em;
+}
+
+.paragraph li {
+    list-style-type: disc;
+    margin-left: 3rem;
 }

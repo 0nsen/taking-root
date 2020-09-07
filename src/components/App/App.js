@@ -8,6 +8,7 @@ import Item from '../Item/Item.js'
 import NavBar from '../NavBar/NavBar';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login'
+import AllCollections from '../All-collections/AllCollections'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/product'>
                 <Item name='Aeonium Emerald Ice'/>
             </Route>
+            <Route path='/all-collections' component={AllCollections} />
 
             <Footer/>
         </Router>
