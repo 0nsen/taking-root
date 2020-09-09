@@ -1,6 +1,8 @@
 import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
+import {aeonium, cactus, sedum, unusual} from '../Product-data/product-data'
+import ItemShowcase from '../ItemShowcase/ItemShowcase';
 
 class AllCollections extends React.Component {
     readMore()  {
@@ -16,13 +18,14 @@ class AllCollections extends React.Component {
     }
 
     render() {
+        const categories = [aeonium[0], cactus[0], sedum[0], unusual[0]];
         return (
-            <div className="all-collections">
-                <header className="all-collections__header">
+            <div className="collection">
+                <header className="collection__header">
                     <h2>ALL COLLECTIONS</h2>
                 </header>
 
-                <article className="succulents-info">
+                <article>
                     <p className="paragraph">
                         <br/> <br/>
                         <h3><strong>WHAT ARE SUCCULENTS?</strong></h3>
@@ -60,6 +63,14 @@ class AllCollections extends React.Component {
                         <span id="read-more" onClick={this.readMore}>Read more</span>
                     </p>
                 </article>
+
+                <section className="showcase">
+                    {categories.map(category => {
+                        return (
+                            <ItemShowcase imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type} />
+                        );
+                    })}
+                </section>
             </div>
         );
     }

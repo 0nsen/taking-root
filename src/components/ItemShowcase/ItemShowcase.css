@@ -1,0 +1,20 @@
+.item-showcase {
+    border: red solid 1px;
+    height: 350px;
+    width: 290px;
+    margin: 20px 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item-showcase img {
+    width: 100%;
+    height: auto;
+    border: green solid 1px;
+}
+
+.item-showcase h4 {
+    border: rgb(94, 94, 211) solid 1px;
+    text-align: center;
+}

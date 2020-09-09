@@ -1,20 +1,20 @@
-.all-collections {
+.collection {
     font-family: 'Roboto', sans-serif;
 }
 
-.all-collections__header {
+.collection__header {
     height: 200px;
     background-image: url('../Home/shallow-focus-photography-of-green-leafed-plants-1207966.jpg');
     background-size: cover;
 }
 
-.all-collections__header h2 {
+.collection__header h2 {
     display: block;
     position: absolute;
-    margin: 50px calc((100vw - 400px)/2); 
+    margin: 50px calc((100vw - 300px)/2); 
     font-size: 2rem;
     height: 100px;
-    width: 400px;
+    width: 300px;
     text-align: center;
     padding-top: 2rem;
     color: rgb(150,201,153);;
@@ -29,4 +29,14 @@
 
 #read-more:hover {
     color: rgb(82,162,87);
+}
+
+.showcase {
+    width: 80%;
+    border: black solid 1px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
