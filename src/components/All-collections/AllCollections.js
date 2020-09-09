@@ -67,7 +67,7 @@ class AllCollections extends React.Component {
                 <section className="showcase">
                     {categories.map(category => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type} />
+                            <ItemShowcase imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type} />
                         );
                     })}
                 </section>

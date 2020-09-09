@@ -12,6 +12,7 @@ import AllCollections from '../All-collections/AllCollections'
 import Aeonium from '../All-collections/Aeonium';
 import Cactus from '../All-collections/Cactus';
 import Sedum from '../All-collections/Sedum';
+import Unusual from '../All-collections/Unusual';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path='/aeonium' component={Aeonium} />
             <Route path='/cactus' component={Cactus} />
             <Route path='/sedum' component={Sedum} />
+            <Route path='/unusual' component={Unusual} />
 
             <Footer/>
         </Router>
