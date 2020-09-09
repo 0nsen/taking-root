@@ -1,20 +1,22 @@
 .item-showcase {
     border: red solid 1px;
-    height: 350px;
+    height: 330px;
     width: 290px;
     margin: 20px 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
-.item-showcase img {
+.item-img {
     width: 100%;
     height: auto;
     border: green solid 1px;
 }
 
-.item-showcase h4 {
+.item-name {
     border: rgb(94, 94, 211) solid 1px;
     text-align: center;
+}
+
+.item-showcase:hover .item-name {
+    color: rgb(150,201,153);
+    transition: ease 0.1s;
 }
