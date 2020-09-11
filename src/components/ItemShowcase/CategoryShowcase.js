@@ -1,8 +1,12 @@
 import React from 'react'
 import './ItemShowcase.css'
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
+import Aeonium from '../All-collections/Aeonium';
+import Sedum from '../All-collections/Sedum';
+import Cactus from '../All-collections/Cactus';
+import Unusual from '../All-collections/Unusual';
 
-class ItemShowcase extends React.Component {
+class CategoryShowcase extends React.Component {
     render() {
         const style = {
             color: 'black',
@@ -14,13 +18,14 @@ class ItemShowcase extends React.Component {
             flexDirection: 'column',
             justifyContent: 'space-around'
         }
-
+        
+        const link = this.props.name == 'UNUSUAL SPECIES' ? 'unusual' : this.props.name.toLowerCase();
+        
         return (
             <div className="item-showcase">
-                <Link to='#' style={style}>
+                <Link to={'/all-collections/' + link} style={style}>
                     <img className='item-img' src={this.props.imageSrc}/>
                     <h4 className='item-name'>{this.props.name}</h4>
-                    <h4 className='item-price'>${this.props.price}</h4>
                 </Link>
                 
             </div>
@@ -28,4 +33,4 @@ class ItemShowcase extends React.Component {
     }
 }
 
-export default ItemShowcase;
+export default CategoryShowcase;

@@ -41,10 +41,10 @@ class NavBar extends React.Component {
                         <div className="shop-dropdown">
                             <Link to='/all-collections' style={dropdownStyle}><h1>SHOP</h1></Link>
                             <div className="dropdown-content">
-                                <Link to='/aeonium' style={{color: 'white', textDecoration: 'none'}}><h1>Aeonium</h1></Link>
-                                <Link to='/cactus' style={{color: 'white', textDecoration: 'none'}}><h1>Cactus</h1></Link>
-                                <Link to='/sedum' style={{color: 'white', textDecoration: 'none'}}><h1>Sedum</h1></Link>
-                                <Link to='/unusual' style={{color: 'white', textDecoration: 'none'}}><h1>Unusual Species</h1></Link>
+                                <Link to='/all-collections/aeonium' style={{color: 'white', textDecoration: 'none'}}><h1>Aeonium</h1></Link>
+                                <Link to='/all-collections/cactus' style={{color: 'white', textDecoration: 'none'}}><h1>Cactus</h1></Link>
+                                <Link to='/all-collections/sedum' style={{color: 'white', textDecoration: 'none'}}><h1>Sedum</h1></Link>
+                                <Link to='/all-collections/unusual' style={{color: 'white', textDecoration: 'none'}}><h1>Unusual Species</h1></Link>
                             </div>
                         </div>
                         

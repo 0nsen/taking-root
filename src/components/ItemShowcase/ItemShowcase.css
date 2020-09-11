@@ -1,6 +1,6 @@
 .item-showcase {
     border: red solid 1px;
-    height: 330px;
+    height: 350px;
     width: 290px;
     margin: 20px 6px;
 }
@@ -11,12 +11,12 @@
     border: green solid 1px;
 }
 
-.item-name {
+.item-name, .item-price {
     border: rgb(94, 94, 211) solid 1px;
     text-align: center;
 }
 
-.item-showcase:hover .item-name {
+.item-showcase:hover .item-name, .item-showcase:hover .item-price {
     color: rgb(150,201,153);
     transition: ease 0.1s;
 }

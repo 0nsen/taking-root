@@ -28,10 +28,10 @@ function App() {
                 <Item name='Aeonium Emerald Ice'/>
             </Route>
             <Route exact path='/all-collections' component={AllCollections} />
-            <Route path='/aeonium' component={Aeonium} />
-            <Route path='/cactus' component={Cactus} />
-            <Route path='/sedum' component={Sedum} />
-            <Route path='/unusual' component={Unusual} />
+            <Route path='/all-collections/aeonium' component={Aeonium} />
+            <Route path='/all-collections/cactus' component={Cactus} />
+            <Route path='/all-collections/sedum' component={Sedum} />
+            <Route path='/all-collections/unusual' component={Unusual} />
 
             <Footer/>
         </Router>

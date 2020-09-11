@@ -83,7 +83,7 @@ class Cactus extends React.Component {
                 <section className='showcase'>
                     {cactus.map(item => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} />
+                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} price={item.prices[0]}/>
                         )
                     })}
                 </section>

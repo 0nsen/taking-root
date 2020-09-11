@@ -2,7 +2,7 @@ import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
 import {aeonium, cactus, sedum, unusual} from '../Product-data/product-data'
-import ItemShowcase from '../ItemShowcase/ItemShowcase';
+import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
 
 class AllCollections extends React.Component {
     readMore()  {
@@ -67,7 +67,7 @@ class AllCollections extends React.Component {
                 <section className="showcase">
                     {categories.map(category => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type} />
+                            <CategoryShowcase imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type} />
                         );
                     })}
                 </section>
