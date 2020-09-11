@@ -5,6 +5,13 @@ import {sedum} from '../Product-data/product-data'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 
 class Sedum extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            sedum: sedum
+        }
+    }
+
     readMore()  {
         if (document.querySelector('#more').style.display == 'none') {
             document.querySelector('#more').style.display = 'inline';
@@ -59,9 +66,9 @@ class Sedum extends React.Component {
                 </article>
 
                 <section className='showcase'>
-                    {sedum.map(item => {
+                    {this.state.sedum.map(item => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} price={item.prices[0]}/>
+                            <ItemShowcase info={item}/>
                         )
                     })}
                 </section>

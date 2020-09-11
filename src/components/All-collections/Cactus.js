@@ -5,6 +5,13 @@ import {cactus} from '../Product-data/product-data.js'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 
 class Cactus extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cactus: cactus
+        }
+    }
+
     readMore()  {
         if (document.querySelector('#more').style.display == 'none') {
             document.querySelector('#more').style.display = 'inline';
@@ -81,9 +88,9 @@ class Cactus extends React.Component {
                     </p>
                 </article>
                 <section className='showcase'>
-                    {cactus.map(item => {
+                    {this.state.cactus.map(item => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} price={item.prices[0]}/>
+                            <ItemShowcase info={item}/>
                         )
                     })}
                 </section>

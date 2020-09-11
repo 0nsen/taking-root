@@ -17,10 +17,10 @@ class ItemShowcase extends React.Component {
 
         return (
             <div className="item-showcase">
-                <Link to='#' style={style}>
-                    <img className='item-img' src={this.props.imageSrc}/>
-                    <h4 className='item-name'>{this.props.name}</h4>
-                    <h4 className='item-price'>${this.props.price}</h4>
+                <Link to='/ha' style={style}>
+                    <img className='item-img' src={require('../Product-data/' + this.props.info.imageSrc)}/>
+                    <h4 className='item-name'>{this.props.info.name}</h4>
+                    <h4 className='item-price'>${this.props.info.prices[0]}</h4>
                 </Link>
                 
             </div>

@@ -5,6 +5,13 @@ import {aeonium} from '../Product-data/product-data.js'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 
 class Aeonium extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            aeonium: aeonium
+        }
+    }
+
     readMore()  {
         if (document.querySelector('#more').style.display == 'none') {
             document.querySelector('#more').style.display = 'inline';
@@ -52,9 +59,9 @@ class Aeonium extends React.Component {
                 </article>
 
                 <section className='showcase'>
-                    {aeonium.map(item => {
+                    {this.state.aeonium.map(item => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} price={item.prices[0]}/>
+                            <ItemShowcase info={item}/>
                         );
                     })}
                 </section>

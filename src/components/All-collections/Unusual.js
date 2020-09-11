@@ -5,6 +5,13 @@ import ItemShowcase from '../ItemShowcase/ItemShowcase'
 import {unusual} from '../Product-data/product-data'
 
 class Unusual extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            unusual: unusual
+        }
+    }
+
     render() {
         return (    
             <div className='collection'>
@@ -18,9 +25,9 @@ class Unusual extends React.Component {
                 </p>
                 
                 <section className='showcase'>
-                    {unusual.map(item => {
+                    {this.state.unusual.map(item => {
                         return (
-                            <ItemShowcase imageSrc={require('../Product-data/' + item.imageSrc)} name={item.name} price={item.prices[0]}/>
+                            <ItemShowcase info={item}/>
                         )
                     })}
                 </section>
