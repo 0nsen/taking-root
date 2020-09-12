@@ -21,3 +21,17 @@ footer h5:hover {
     cursor: pointer;
 }
 
+.fa {
+    margin-top: 10px;
+    color: rgb(159, 175, 160);
+    width: auto;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fa:hover {
+    color: white;
+}

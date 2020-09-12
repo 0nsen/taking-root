@@ -47,37 +47,3 @@
     margin: auto;
     width: 80%;
 }
-
-.showcase {
-    display: flex;
-    justify-content: center;
-    height: 85%;
-}
-
-.shop-section {
-    position: relative;
-    top: 0;
-    display: grid;
-    border: red solid;
-    height: 150vh;
-    width: 98vw;
-    grid-template-columns: 10% 35% 10% 35% 10%;
-    grid-template-rows: repeat(3, 13%) 100px repeat(3, 13%);
-}
-
-.container-shop {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 3;
-    border: blue solid;
-}
-
-.container-shop img {
-    width: 100%;
-    height: auto;
-}
-
-.weirdos-shop {
-    border: green solid;
-    grid-column: 4 / span 1;
-    grid-row: 5 / span 3;
-}
