@@ -12,7 +12,7 @@ class Footer extends React.Component {
         return (
             <footer className="footer">
                 <div className="information">
-                    <Link to='#' style={style}><h4>INFORMATION</h4></Link>
+                    <h4>INFORMATION</h4>
                     <Link to='#' style={style}><h5>Terms of Use</h5></Link>
                     <Link to='#' style={style}><h5>Privacy Policy</h5></Link>
                     <Link to='#' style={style}><h5>Copyright Policy</h5></Link>

@@ -1,7 +1,7 @@
 .item-showcase {
     border: red solid 1px;
     height: 350px;
-    width: 290px;
+    max-width: 290px;
     margin: 20px 6px;
 }
 
@@ -19,4 +19,13 @@
 .item-showcase:hover .item-name, .item-showcase:hover .item-price {
     color: rgb(150,201,153);
     transition: ease 0.1s;
+}
+
+@media only screen and (max-width: 720px) {
+    .item-showcase {
+        width: 180px;
+        height: 240px;
+        font-size: 0.8rem;
+    }
+    
 }

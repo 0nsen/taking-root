@@ -7,24 +7,24 @@ import {Link} from 'react-router-dom';
 class NavBar extends React.Component {
     render() {
         const style = {
-            marginLeft: '2em',
+            marginLeft: '1vw',
             width: '10%',
-            height: '4rem',
+            height: '5rem',
             textAlign: 'center',
-            padding: '1.3em 0',
             textDecoration: 'none',
-            fontSize: '1.1em',
+            fontSize: '1.1vw',
             color: 'white',
+            border: 'blue solid 1px'
         };
 
         const dropdownStyle = {
             display: 'block',
-            height: '4rem',
+            height: '5rem',
             width: '100%',
-            marginTop: '-1.4rem',
             textDecoration: 'none',
             color: 'white',
-            fontSize: '1.1em',
+            fontSize: '1.1vw',
+            border: 'blue solid 1px'
         };
 
         return (
@@ -35,7 +35,7 @@ class NavBar extends React.Component {
                 </div>
                 
                 <div className="navbar__bottom">
-                    <Link to='/' style={{color: 'white'}}><h1 id="shop-name">Taking Root</h1></Link>
+                    <Link id="shop-name__link" to='/' style={{color: 'white'}}><h1 id="shop-name">Taking Root</h1></Link>
                     
                     <div className="navbar__bottom--right">
                         <div className="shop-dropdown">
@@ -50,8 +50,8 @@ class NavBar extends React.Component {
                         
                         <Link to='/about' style={style}><h1 className="navbar-item">ABOUT</h1></Link>
                         <Link to='/contact' style={style}><h1 className="navbar-item"> CONTACT</h1></Link>
-                        <SearchBar />
                     </div>
+                    <SearchBar />
                 </div>
             </nav>
         )

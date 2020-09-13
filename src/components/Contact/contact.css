@@ -70,3 +70,13 @@ section.contact {
 .contact__form button:hover {
     background-color: rgb(82, 162, 87);
 }
+
+@media only screen and (max-width: 720px) {
+    .contact {
+        flex-wrap: wrap;
+    }
+
+    .contact__form, .contact__info {
+        width: 100%;
+    }
+}

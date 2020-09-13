@@ -10,6 +10,31 @@ footer {
     font-weight: 500;
 }
 
+@media only screen and (max-width: 720px) {
+    footer {
+        flex-wrap: wrap;
+        line-height: 1.5rem;
+    }
+
+    .information, .customer-service {
+        width: 50%;
+    }
+
+    .information {
+        float: left;
+    }
+
+    .customer-service {
+        float: right;
+        text-align: right;
+    }
+
+    .follow-us {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
 footer h5 {
     margin-top: 1em;
     font-weight: 300;

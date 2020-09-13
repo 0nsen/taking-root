@@ -1,6 +1,6 @@
 .navbar__top {
     background-color: rgb(82, 162, 87);
-    height: 2em;
+    height: 2rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -27,27 +27,32 @@ button.login:hover {
 
 .navbar__bottom {
     width: 100%;
-    height: 4em;
+    height: 5rem;
     background-color: rgb(150, 201, 153);
+    display: flex;
+    justify-content: space-between;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
+#shop-name__link {
+    width: 15%;
+}
+
 #shop-name {
     display: inline-block;
-    width: 15%; 
     height: 100%;
-    margin: 0;
+    width: 100%;
     font-family: 'Berkshire Swash', cursive;
-    font-size: 2.4em;
-    padding-top: 0.3em;
-    padding-left: 0.3em;
+    font-size: 2.6vw;
+    padding-top: 1rem;
+    text-align: center;
 }
 
 .navbar__bottom--right {
     font-family: 'Roboto', sans-serif;
-    width: 80%;
-    float: right;
+    width: 70%;
+    border: black dashed 1px;
     display: flex;
     justify-content: flex-end;
 }
@@ -57,32 +62,56 @@ button.login:hover {
 }
 
 .navbar__bottom--right h1 {
-    height: 4rem;
-    padding: 1.4rem 0;
-}
-
-.navbar-item {
-    margin-top: -1.5rem;
+    height: 5rem;
+    border: yellow solid 1px;
+    padding: 2rem 0;
 }
 
 .shop-dropdown {
     z-index: 99;
     width: 10%;
     text-align: center;
-    padding: 1.3rem 0;
+    height: 5rem;
     border: red solid 1px;
-    height: 4rem;
 }
 
 .dropdown-content {
     display: none;
 }
 
+.dropdown-content h1 {
+    padding: 1.1rem 0;    
+    height: 3rem;
+    border: black dotted 1px;
+}
+
 .shop-dropdown:hover .dropdown-content {
     display: block;
     background-color: rgba(133, 201, 138, 0.9);
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.8vw;
+}
+
+
+
+@media only screen and (max-width: 720px) {
+    .navbar__bottom--right {
+        background-color: red;
+        order: -1;
+        justify-content: flex-start;
+        width: 25%;
+    }
+
+    #shop-name__link {
+        order: 0;
+        width: 50%;
+        border: red solid 1px;
+    }
+
+    #shop-name {
+        font-size: 2.5rem;
+        width: 100%;
+    }
 }
 
 

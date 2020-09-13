@@ -1,10 +1,6 @@
 import React from 'react'
 import './ItemShowcase.css'
 import {Link, Route} from 'react-router-dom'
-import Aeonium from '../All-collections/Aeonium';
-import Sedum from '../All-collections/Sedum';
-import Cactus from '../All-collections/Cactus';
-import Unusual from '../All-collections/Unusual';
 
 class CategoryShowcase extends React.Component {
     render() {
