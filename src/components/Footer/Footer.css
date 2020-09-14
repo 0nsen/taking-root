@@ -3,8 +3,8 @@ footer {
     bottom: 0;
     display: flex;
     justify-content: space-around;
-    background-color: rgb(29, 32, 29);
-    color: rgb(159, 175, 160);
+    background-color:rgb(27,31,35);
+    color: rgb(127,140,141);
     padding: 4em;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -38,6 +38,7 @@ footer {
 footer h5 {
     margin-top: 1em;
     font-weight: 300;
+    color: rgb(127,140,141);
 }
 
 footer h5:hover {
@@ -48,7 +49,7 @@ footer h5:hover {
 
 .fa {
     margin-top: 10px;
-    color: rgb(159, 175, 160);
+    color: rgb(127,140,141);
     width: auto;
     height: 40px;
     font-size: 20px;

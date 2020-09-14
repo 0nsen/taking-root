@@ -1,5 +1,5 @@
 .navbar__top {
-    background-color: rgb(82, 162, 87);
+    background-color: rgb(52,191,162);
     height: 2rem;
     display: flex;
     justify-content: flex-end;
@@ -12,7 +12,7 @@
 }
 
 button.login {
-    background-color: rgb(82, 162, 87);
+    background-color: rgb(52,191,162);
     color: white;
     border: none;
     cursor: pointer;
@@ -28,89 +28,120 @@ button.login:hover {
 .navbar__bottom {
     width: 100%;
     height: 5rem;
-    background-color: rgb(150, 201, 153);
+    background-color: rgb(72,197,171);
     display: flex;
     justify-content: space-between;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 
-#shop-name__link {
-    width: 15%;
-}
-
 #shop-name {
-    display: inline-block;
+    width: 15%;
+    color: white;
     height: 100%;
-    width: 100%;
     font-family: 'Berkshire Swash', cursive;
     font-size: 2.6vw;
     padding-top: 1rem;
     text-align: center;
+    border: blue solid 1px;
 }
 
-.navbar__bottom--right {
+#shop-name:hover {
+    color: black;
+    transition: ease 0.2s;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 5rem;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.8rem;
+}
+
+.link:hover {
+    color: black;
+    transition: ease 0.2s;
+}
+
+.navbar-items {
     font-family: 'Roboto', sans-serif;
     width: 70%;
-    border: black dashed 1px;
     display: flex;
     justify-content: flex-end;
+    border: red solid 1px;
 }
 
-.navbar__bottom--right h1:hover {
-    color: black;
-}
-
-.navbar__bottom--right h1 {
-    height: 5rem;
-    border: yellow solid 1px;
-    padding: 2rem 0;
+.shop-dropdown, .nav-about, .nav-contact {
+    width: 10%;
 }
 
 .shop-dropdown {
     z-index: 99;
-    width: 10%;
-    text-align: center;
-    height: 5rem;
-    border: red solid 1px;
 }
 
-.dropdown-content {
+.shop-dropdown__contents {
     display: none;
 }
 
-.dropdown-content h1 {
-    padding: 1.1rem 0;    
-    height: 3rem;
-    border: black dotted 1px;
+.shop-dropdown:hover .shop-dropdown__contents {
+    display: block;
+    background-color: rgba(72,197,171,0.9);
 }
 
-.shop-dropdown:hover .dropdown-content {
-    display: block;
-    background-color: rgba(133, 201, 138, 0.9);
-    color: white;
-    font-size: 0.8vw;
+.shop-dropdown__content-link {
+    height: 3rem;
+    padding: 1rem 0;
+}
+
+.nav-dropdown__icon {
+    display: none;
+}
+
+.nav-dropdown__content {
+    display: none;
 }
 
 
 
 @media only screen and (max-width: 720px) {
-    .navbar__bottom--right {
-        background-color: red;
-        order: -1;
-        justify-content: flex-start;
-        width: 25%;
-    }
-
-    #shop-name__link {
-        order: 0;
-        width: 50%;
-        border: red solid 1px;
-    }
-
     #shop-name {
-        font-size: 2.5rem;
-        width: 100%;
+        order: 0;
+        width: 40%;
+        font-size: 2.2rem;
+    }
+
+    .navbar-items {
+        display: none;
+    }
+
+    .nav-dropdown {
+        width: 15%;
+        border: blue solid 1px;
+        order: -1;
+    }
+
+    .nav-dropdown__icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: red solid 1px;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    #bar1, #bar2, #bar3 {
+        background-color: white;
+        height: 4px;
+        width: 50%;
+        margin: 5px 0;
+    }
+
+    .nav-dropdown__content#visible {
+        display: block;
     }
 }
 

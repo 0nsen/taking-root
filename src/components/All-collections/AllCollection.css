@@ -17,18 +17,19 @@
     width: 300px;
     text-align: center;
     padding-top: 2rem;
-    color: rgb(150,201,153);;
-    background-color: rgb(255, 255, 255);
+    color: rgb(72,197,171);
+    background-color: rgb(255,248,240);
 }
 
 #read-more {
     cursor: pointer;
-    color: rgb(150,201,153);
+    color: rgb(72,197,171);;
     font-weight: 500;
 }
 
 #read-more:hover {
-    color: rgb(82,162,87);
+    color: rgb(43, 156, 132);
+    transition: ease 0.2s;
 }
 
 .showcase {

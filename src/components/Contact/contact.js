@@ -19,7 +19,7 @@ export default function Contact() {
                         <br/><br/>
                         <li>If you have an issue regarding an order, please leave the name, email, and order number associated with your order so we can better assist you!</li>
                         <br/><br/>
-                        <li>Check out our <Link to='/' style={{textDecoration: 'none'}}><span><strong>FAQs</strong></span></Link> for information about shipping, return, cancellation policies & general succulent care questions.</li>
+                        <li>Check out our <a href="#"><strong>FAQs</strong></a> for information about shipping, return, cancellation policies & general succulent care questions.</li>
                     </ul>
                 </div>
 

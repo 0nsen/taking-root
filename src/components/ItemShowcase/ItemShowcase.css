@@ -17,8 +17,8 @@
 }
 
 .item-showcase:hover .item-name, .item-showcase:hover .item-price {
-    color: rgb(150,201,153);
-    transition: ease 0.1s;
+    color: rgb(72,197,171);
+    transition: ease 0.2s;
 }
 
 @media only screen and (max-width: 720px) {
