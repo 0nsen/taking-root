@@ -100,11 +100,25 @@ button.login:hover {
     display: none;
 }
 
-.nav-dropdown__content {
+.nav-dropdown__contents {
     display: none;
 }
 
+.dropdown-arrow {
+    display: inline-block;
+    border: white solid 1px;
+    height: 0.5rem;
+    width: 0.5rem;
+    margin-left: 5px;
+    border-top: none;
+    border-left: none;
+    transform: translateY(-3px) rotate(45deg);
+}
 
+.shop:hover .dropdown-arrow {
+    border-color: black;
+    transition: ease 0.2s;
+}
 
 @media only screen and (max-width: 720px) {
     #shop-name {
@@ -118,9 +132,11 @@ button.login:hover {
     }
 
     .nav-dropdown {
+        font-family: 'Roboto', sans-serif;
         width: 15%;
         border: blue solid 1px;
         order: -1;
+        z-index: 99;
     }
 
     .nav-dropdown__icon {
@@ -140,8 +156,18 @@ button.login:hover {
         margin: 5px 0;
     }
 
-    .nav-dropdown__content#visible {
+    .nav-dropdown__contents#visible {
         display: block;
+        width: 100%;
+        position: absolute;
+        background-color: rgb(52,191,162);
+    }
+
+    .nav-dropdown__contents#visible .link {
+        width: 100%;
+        font-size: 1.5rem;
+        padding-top: 1.8rem;
+        border: rgb(72,197,171) solid 2px;
     }
 }
 
