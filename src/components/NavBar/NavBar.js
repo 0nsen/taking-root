@@ -24,12 +24,12 @@ class NavBar extends React.Component {
 
                     <div className="nav-dropdown" onClick={this.dropDown}>
                         <div className="nav-dropdown__icon">
-                            <div id="bar1"></div>
-                            <div id="bar2"></div>
-                            <div id="bar3"></div>
+                            <div id="bar"></div>
+                            <div id="bar"></div>
+                            <div id="bar"></div>
                         </div>
                         <div className="nav-dropdown__contents">
-                            <Link className="link shop" to="/all-collections">SHOP</Link>
+                            <Link className="link shop" to="/all-collections">SUCCULENTS</Link>
                             <Link className="link nav-about" to="/about">ABOUT</Link>
                             <Link className="link nav-contact" to="/contact">CONTACT</Link>
                         </div>
@@ -37,7 +37,7 @@ class NavBar extends React.Component {
 
                     <div className="navbar-items">
                         <div className="shop-dropdown">
-                            <Link className="link shop" to="/all-collections">SHOP<span className="dropdown-arrow"></span></Link>
+                            <Link className="link shop" to="/all-collections">SUCCULENTS<span className="dropdown-arrow"></span></Link>
                             <div className="shop-dropdown__contents">
                                 <Link className="link shop-dropdown__content-link" to="/all-collections/aeonium">Aeonium</Link>
                                 <Link className="link shop-dropdown__content-link" to="/all-collections/cactus">Cactus</Link>

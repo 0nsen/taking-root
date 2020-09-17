@@ -6,12 +6,15 @@ class Home extends React.Component {
         return (
             <div>
                 <div className="shop-banner">
-                    <h2>Organically grown <br/> SUCCULENTS</h2>
-                    <button>Shop</button>
+                    <h2 id="tagline">
+                        ORGANICALLY GROWN 
+                        <br/> 
+                        <em>SUCCULENTS</em>
+                    </h2>
+                    <button>SHOP</button>
                 </div>
 
                 <div className="new-arrivals">
-                    <h1>New Arrivals</h1>
                     <div className="carousel">
                         <ul>
                             

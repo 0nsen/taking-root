@@ -43,7 +43,6 @@ button.login:hover {
     font-size: 2.6vw;
     padding-top: 1rem;
     text-align: center;
-    border: blue solid 1px;
 }
 
 #shop-name:hover {
@@ -71,7 +70,6 @@ button.login:hover {
     width: 70%;
     display: flex;
     justify-content: flex-end;
-    border: red solid 1px;
 }
 
 .shop-dropdown, .nav-about, .nav-contact {
@@ -134,7 +132,6 @@ button.login:hover {
     .nav-dropdown {
         font-family: 'Roboto', sans-serif;
         width: 15%;
-        border: blue solid 1px;
         order: -1;
         z-index: 99;
     }
@@ -144,12 +141,11 @@ button.login:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: red solid 1px;
         height: 100%;
         cursor: pointer;
     }
 
-    #bar1, #bar2, #bar3 {
+    #bar {
         background-color: white;
         height: 4px;
         width: 50%;

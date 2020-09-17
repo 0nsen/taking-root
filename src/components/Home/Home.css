@@ -2,48 +2,47 @@
     background-image: url("shallow-focus-photography-of-green-leafed-plants-1207966.jpg");
     font-family: 'Roboto', sans-serif;
     background-size: cover;
-    height: 100vh;
-    color: white;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.shop-banner h2 {
-    position: relative;
-    display: block;
-    top: 3em;
-    font-size: 4em;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+#tagline {
+    color: rgb(72,197,171);
+    width: 50%;
+    font-size: 4rem;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
     text-align: center;
 }
 
 .shop-banner button {
-    position: relative;
+    margin-top: 2rem;
     display: block;
     width: 10%;
     height: 10%;
-    border-radius: 10px;
-    outline: none;
-    border: white solid 1px;
-    background-color: transparent;
+    background-color: rgb(72,197,171);
+    border: none;
     font-size: 2vw;
     color: white;
     cursor: pointer;
-    margin: 7em auto;
+    outline: none;
 }
 
 .shop-banner button:hover {
-    background-color: rgba(61, 187, 61, 0.5);
+    background-color: rgb(43, 156, 132);
+    transform: scale(1.1);
+    transition: ease .2s;
 }
 
-.new-arrivals {
-    height: 35em;
-    border: green solid;
-    text-align: center;
-}
+@media only screen and (max-width: 720px) {
+    #tagline {
+        width: 90%;
+    }
 
-.new-arrivals h1 {
-    border-bottom: rgb(0, 0, 0) solid 1px;
-    height: 15%;
-    padding-top: 0.6em;
-    margin: auto;
-    width: 80%;
+    .shop-banner button {
+        width: 50%;
+        font-size: 2rem;
+    }
 }
