@@ -1,6 +1,5 @@
 import React from 'react'
 import '../About/About.css'
-import {Link} from 'react-router-dom'
 import './contact.css'
 
 export default function Contact() {

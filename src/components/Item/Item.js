@@ -1,25 +1,21 @@
 import React from 'react'
 import './Item.css'
-import image from '../Product-data/AEONIUM EMERALD ICE.webp'
+import {aeonium, sedum, cactus, unusual} from '../Product-data/product-data'
 
 class Item extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <section className="product-page">
                 <div className="product-image">
-                    <img src={image} />
+                    <img src={require("../Product-data/" + this)} />
                 </div>
                 <div className="product-info">
-                    <h1 className="product-name">AEONIUM EMERALD ICE</h1>
-                    <h3>$5.85</h3>
+                    <h1 className="product-name">{this.product.name}</h1>
+                    <h3>${this.product.prices[0]}</h3>
                     
                     <form className="sizes">
                         <h5>SIZE</h5>
-
+    
                         <input name="size" id='2inch' type='radio' value='2 inch' defaultChecked/>
                         <label for='2inch'>2 INCH</label>
                         
@@ -45,5 +41,3 @@ class Item extends React.Component {
         );
     }
 }
-
-export default Item;
