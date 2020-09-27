@@ -27,7 +27,7 @@ class Unusual extends React.Component {
                 <section className='showcase'>
                     {this.state.unusual.map(item => {
                         return (
-                            <ItemShowcase info={item}/>
+                            <ItemShowcase key={item.key} info={item}/>
                         )
                     })}
                 </section>
