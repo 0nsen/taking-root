@@ -1,8 +1,8 @@
 import React from 'react'
 import './ItemShowcase.css'
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch} from 'react-router-dom'
 
-export default function ItemShowcase() {
+export default function ItemShowcase(props) {
     const style = {
         color: 'black',
         textDecoration: 'none',
@@ -14,16 +14,15 @@ export default function ItemShowcase() {
         justifyContent: 'space-around'
     }
 
-    const link = (this.props.info.name).toLowerCase().replaceAll(" ", "-");
+    const link = (props.info.name).toLowerCase().replaceAll(" ", "-");
 
     return (
         <div className="item-showcase">
             <Link to={`/all-collections/${link}`} style={style}>
-                <img alt="product" className='item-img' src={require('../Product-data/' + this.props.info.imageSrc)}/>
-                <h4 className='item-name'>{this.props.info.name}</h4>
-                <h4 className='item-price'>${this.props.info.prices[0]}</h4>
+                <img alt="product" className='item-img' src={require('../Product-data/' + props.info.imageSrc)}/>
+                <h4 className='item-name'>{props.info.name}</h4>
+                <h4 className='item-price'>${props.info.prices[0]}</h4>
             </Link>
         </div>
     );
 }
-

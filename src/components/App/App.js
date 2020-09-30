@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Home from '../Home/Home';
 import About from '../About/About'
@@ -18,24 +18,41 @@ function App() {
     return (
         <Router>
             <NavBar />
-        
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/login' component={Login} />            
-            
-            <Route exact path='/all-collections' component={AllCollections} />
-            <Route path='/all-collections/aeonium' component={Aeonium} />
-            <Route path='/all-collections/cactus' component={Cactus} />
-            <Route path='/all-collections/sedum' component={Sedum} />
-            <Route path='/all-collections/unusual' component={Unusual} />
 
-            <Route path='/all-collections/:productID' component={Item} />
+            <Switch>
+                <Route exact path='/' component={Home} />
+                <Route path='/about' component={About} />
+                <Route path='/contact' component={Contact} />
+                <Route path='/login' component={Login} />            
+                
+                <Route exact path='/all-collections' component={AllCollections}/>
+                <Route path='/all-collections/:routeID' component={routeChange}/>
+                
+            </Switch>
 
             <Footer/>
         </Router>
     );
     
+}
+
+function routeChange({match}) {
+    switch (match.params.routeID) {
+        case 'aeonium': 
+            return <Aeonium/>
+            break;
+        case 'cactus':
+            return <Cactus/>
+            break;
+        case 'sedum':
+            return <Sedum/>
+            break;
+        case 'unusual':
+            return <Unusual/>
+            break;
+        default: 
+            return <Item link={match.params.routeID}/>
+    }
 }
 
 export default App;

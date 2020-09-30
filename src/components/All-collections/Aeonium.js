@@ -3,31 +3,9 @@ import './AllCollection.css'
 import '../About/About.css'
 import {aeonium} from '../Product-data/product-data.js'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
-import { useRouteMatch, Route, useParams } from 'react-router-dom';
-import Item from '../Item/Item'
-import userEvent from '@testing-library/user-event';
+import {readMore} from '../utility'
 
 function Aeonium() {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         aeonium: aeonium
-    //     }
-    // }
-
-    function readMore()  {
-        if (document.querySelector('#more').style.display === 'none') {
-            document.querySelector('#more').style.display = 'inline';
-            document.querySelector('#read-more').innerHTML = 'Read Less';
-          
-        }
-        else if (document.querySelector('#more').style.display === 'inline') {
-            document.querySelector('#more').style.display = 'none';
-            document.querySelector('#read-more').innerHTML = 'Read More';
-        }
-    }
-
-    const {path} = useRouteMatch();    
     return (
         <div className='collection'>
             <header className="collection__header">
@@ -66,15 +44,9 @@ function Aeonium() {
                     );
                 })}
             </section>
-
-            <Route exact path={`${path}/:productID`} component={ToProduct}/>
+            
         </div>
     )
-}
-
-function ToProduct() {
-    const {productID} = useParams();
-    console.log("testing: " + productID);
 }
 
 export default Aeonium;

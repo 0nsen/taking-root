@@ -1,8 +1,9 @@
 import React from 'react'
 import './ItemShowcase.css'
-import {Link} from 'react-router-dom'
+import {Link, useRouteMatch, Route, useParams} from 'react-router-dom'
+import Item from '../Item/Item'
 
-export default function CategoryShowcase() {
+export default function CategoryShowcase(props) {
     const style = {
         color: 'black',
         textDecoration: 'none',
@@ -14,15 +15,15 @@ export default function CategoryShowcase() {
         justifyContent: 'space-around'
     }
     
-    const link = this.props.name === 'UNUSUAL SPECIES' ? 'unusual' : this.props.name.toLowerCase();
-    
+    const link = props.name === 'UNUSUAL SPECIES' ? 'unusual' : props.name.toLowerCase();
+    const match = useRouteMatch();
+
     return (
         <div className="item-showcase">
-            <Link to={'/all-collections/' + link} style={style}>
-                <img className='item-img' alt="category" src={this.props.imageSrc}/>
-                <h4 className='item-name'>{this.props.name}</h4>
+            <Link to={`${match.url}/${link}`} style={style}>
+                <img className='item-img' alt="category" src={props.imageSrc}/>
+                <h4 className='item-name'>{props.name}</h4>
             </Link>
-            
         </div>
     );
 }
