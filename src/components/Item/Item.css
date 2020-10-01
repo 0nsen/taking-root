@@ -1,24 +1,23 @@
 .product-page {
     width: 70%;
-    height: 500px;
     margin: 4rem auto;
+    height: 500px;
     font-family: 'Roboto', sans-serif;
 }
 
 .product-image {
     width: 48%;
-    height: 100%;
+    height: auto;
     display: inline-block;
 }
 
 .product-image img {
-    max-width: auto;
-    max-height: 500px;
+    width: 100%;
 }
 
 .product-info {
     width: 48%;
-    height: 70%;
+    height: 400px;
     float: right;
     display: flex;
     flex-direction: column;
@@ -44,6 +43,16 @@
     margin-bottom: 1.5rem;
 }
 
+.sizes__buttons {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.sizes__buttons div:first-child {
+    margin-left: -0.5rem;
+}
+
 .sizes input {
     /* Don't use "display: none" or "visibility: hidden"
     It makes choosing by keyboard unusable */
@@ -61,10 +70,6 @@
 
 .sizes label:hover {
     cursor: pointer;
-}
-
-.sizes label[for="2inch"] {
-    margin-left: -0.5rem;
 }
 
 .sizes input:checked + label {
@@ -85,15 +90,44 @@
 .add-to-cart {
     width: 40%;
     height: 3rem;
-    border: rgb(150,201,153) solid 1px;
-    color: rgb(150,201,153);
+    border: rgb(72,197,171) solid 1px;
+    color: rgb(72,197,171);
     background-color: white;
     font-family: 'Roboto', sans-serif;
     transition: linear 0.2s;
 }
 
 .add-to-cart:hover {
-    background: rgb(150,201,153);
+    background-color: rgb(72,197,171);
     color: white;
     cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .product-page {
+        display: flex;
+        flex-direction: column;
+        margin: 4rem auto;
+        align-items: center;
+        width: 90%;
+        height: 850px;
+    }
+
+    .product-image  {
+        width: 100%;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+
+    .product-name {
+        text-align: center;
+    }
+
+    .quantity input, .add-to-cart {
+        width: 90%;
+        margin: 0 5%;
+    }
+
 }
