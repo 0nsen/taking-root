@@ -34,7 +34,6 @@
 
 .showcase {
     width: 80%;
-    border: black solid 1px;
     margin: 0 auto 3rem auto;
     display: flex;
     flex-direction: row;

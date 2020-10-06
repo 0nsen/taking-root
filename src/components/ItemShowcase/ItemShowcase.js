@@ -6,7 +6,6 @@ export default function ItemShowcase(props) {
     const style = {
         color: 'black',
         textDecoration: 'none',
-        border: 'blue dotted 1px',
         height: '100%',
         width: '100%',
         display: 'flex',

@@ -3,20 +3,9 @@ import './AllCollection.css'
 import '../About/About.css'
 import {aeonium, cactus, sedum, unusual} from '../Product-data/product-data'
 import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
+import {readMore} from '../utility'
 
 export default function AllCollections() {
-    const readMore = () => {
-        if (document.querySelector('#more').style.display == 'none') {
-            document.querySelector('#more').style.display = 'inline';
-            document.querySelector('#read-more').innerHTML = 'Read Less';
-          
-        }
-        else if (document.querySelector('#more').style.display == 'inline') {
-            document.querySelector('#more').style.display = 'none';
-            document.querySelector('#read-more').innerHTML = 'Read More';
-        }
-    }
-
     const categories = [aeonium[0], cactus[0], sedum[0], unusual[0]];
 
     return (
