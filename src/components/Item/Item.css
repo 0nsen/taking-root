@@ -1,12 +1,14 @@
 .product-page {
     width: 70%;
-    margin: 4rem auto;
-    height: 500px;
+    margin: 9rem auto 4rem auto;
+    height: 512px;
     font-family: 'Roboto', sans-serif;
+    max-width: 1060px;
 }
 
 .product-image {
     width: 48%;
+    max-width: 512px;
     height: auto;
     display: inline-block;
 }
@@ -107,7 +109,7 @@
     .product-page {
         display: flex;
         flex-direction: column;
-        margin: 4rem auto;
+        margin: 9rem auto 4rem auto;
         align-items: center;
         width: 90%;
         height: 850px;

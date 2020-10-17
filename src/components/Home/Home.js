@@ -1,13 +1,13 @@
 import React from 'react';
 import './Home.css';
-import {cactus, aeonium, sedum, unusual} from '../Product-data/product-data'
 import ItemShowcase from '../ItemShowcase/ItemShowcase'
 import '../All-collections/AllCollections'
 import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
+import {connect} from 'react-redux'
 
-export default function Home() {
-    const new_arrival = [cactus[5], sedum[5], aeonium[5], unusual[5]];
-    const our_collections = [aeonium[0], cactus[0], sedum[0], unusual[0]];
+function Home(props) {
+    const new_arrival = [props.cactus[5], props.sedum[5], props.aeonium[5], props.unusual[5]];
+    const our_collections = [props.aeonium[0], props.cactus[0], props.sedum[0], props.unusual[0]];
 
     return (
         <div>
@@ -43,3 +43,13 @@ export default function Home() {
     );
 }
 
+const mapStateToProps = (state) => {
+    return {
+        aeonium: state.aeonium,
+        sedum: state.sedum,
+        cactus: state.cactus,
+        unusual: state.unusual,
+    }
+}
+
+export default connect(mapStateToProps)(Home);

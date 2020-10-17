@@ -1,11 +1,11 @@
 import React from 'react'
 import '../About/About.css'
 import './AllCollection.css'
-import {sedum} from '../Product-data/product-data'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 import {readMore} from '../utility'
+import { connect } from 'react-redux';
 
-function Sedum() {
+function Sedum(props) {
     return (
         <div className="collection">
             <header className="collection__header">
@@ -45,7 +45,7 @@ function Sedum() {
             </article>
 
             <section className='showcase'>
-                {sedum.map(item => {
+                {props.sedum.map(item => {
                     return (
                         <ItemShowcase key={item.key} info={item}/>
                     )
@@ -56,4 +56,10 @@ function Sedum() {
     )
 }
 
-export default Sedum;
+const mapStateToProps = state => {
+    return {
+        sedum: state.sedum
+    }
+}
+
+export default connect(mapStateToProps)(Sedum);

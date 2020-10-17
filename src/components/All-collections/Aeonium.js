@@ -1,11 +1,11 @@
 import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
-import {aeonium} from '../Product-data/product-data.js'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 import {readMore} from '../utility'
+import { connect } from 'react-redux';
 
-function Aeonium() {
+function Aeonium(props) {
     return (
         <div className='collection'>
             <header className="collection__header">
@@ -38,7 +38,7 @@ function Aeonium() {
             </article>
 
             <section className='showcase'>
-                {aeonium.map(item => {
+                {props.aeonium.map(item => {
                     return (
                         <ItemShowcase key={item.key} info={item}/>
                     );
@@ -49,4 +49,10 @@ function Aeonium() {
     )
 }
 
-export default Aeonium;
+const mapStateToProps = (state) => {
+    return {
+        aeonium: state.aeonium
+    }
+}
+
+export default connect(mapStateToProps)(Aeonium);

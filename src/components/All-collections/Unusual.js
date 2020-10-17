@@ -2,9 +2,9 @@ import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
 import ItemShowcase from '../ItemShowcase/ItemShowcase'
-import {unusual} from '../Product-data/product-data'
+import { connect } from 'react-redux'
 
-function Unusual() {
+function Unusual(props) {
     return (    
         <div className='collection'>
             <header className='collection__header'>
@@ -17,7 +17,7 @@ function Unusual() {
             </p>
             
             <section className='showcase'>
-                {unusual.map(item => {
+                {props.unusual.map(item => {
                     return (
                         <ItemShowcase key={item.key} info={item}/>
                     )
@@ -25,8 +25,13 @@ function Unusual() {
             </section>
 
         </div>
-    )
-    
+    )   
 }
 
-export default Unusual;
+const mapStateToProps = state => {
+    return {
+        unusual: state.unusual
+    }
+}
+
+export default connect(mapStateToProps)(Unusual);

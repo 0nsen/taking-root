@@ -1,11 +1,11 @@
 import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
-import {cactus} from '../Product-data/product-data.js'
 import ItemShowcase from '../ItemShowcase/ItemShowcase';
 import {readMore} from '../utility'
+import { connect } from 'react-redux';
 
-function Cactus() {    
+function Cactus(props) {    
     return (
         <div className='collection'>
             <header className='collection__header'>
@@ -67,7 +67,7 @@ function Cactus() {
                 <span id="read-more" onClick={readMore}>Read more</span>
             </article>
             <section className='showcase'>
-                {cactus.map(item => {
+                {props.cactus.map(item => {
                     return (
                         <ItemShowcase key={item.key} info={item}/>
                     )
@@ -78,4 +78,10 @@ function Cactus() {
     )
 }
 
-export default Cactus;
+const mapStateToProps = state => {
+    return {
+        cactus: state.cactus
+    }
+}
+
+export default connect(mapStateToProps)(Cactus);

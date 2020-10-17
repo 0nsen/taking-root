@@ -13,6 +13,7 @@ import Cactus from '../All-collections/Cactus';
 import Sedum from '../All-collections/Sedum';
 import Unusual from '../All-collections/Unusual';
 import Item from '../Item/Item';
+import Cart from '../Cart/Cart'
 
 function App() {
     return (
@@ -23,8 +24,9 @@ function App() {
                 <Route exact path='/' component={Home} />
                 <Route path='/about' component={About} />
                 <Route path='/contact' component={Contact} />
-                <Route path='/login' component={Login} />            
-                
+                <Route path='/cart' component={Cart} />
+                <Route path='/login' component={Login}/>
+
                 <Route exact path='/all-collections' component={AllCollections}/>
                 <Route path='/all-collections/:routeID' component={routeChange}/>
                 

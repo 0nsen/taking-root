@@ -1,7 +1,6 @@
 import React from 'react';
 import './NavBar.css';
 import SearchBar from '../SearchBar/SearchBar.js';
-import Cart from '../Cart/Cart.js';
 import {Link} from 'react-router-dom';
 
 export default function NavBar() {
@@ -10,12 +9,17 @@ export default function NavBar() {
         if (!navDropdownContent.id) navDropdownContent.id = "visible";
         else navDropdownContent.removeAttribute("id");  
     }
+
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav').style.opacity = '90%';
+        document.querySelector('nav').style.transition = 'ease 0.2s';
+    });
     
     return (
         <nav>
             <div className="navbar__top">
-                <div className="cart">CART</div>
-                <Link to='/login' style={{marginRight: '2em', width: '5%'}}><button className="login">LOGIN</button></Link>
+                <Link to='/cart' className='upper-linker'><button className='upper-link' id='cart-button'>CART</button></Link>
+                <Link to='/login' className='upper-linker'><button className="upper-link">LOGIN</button></Link>
             </div>
             
             <div className="navbar__bottom">

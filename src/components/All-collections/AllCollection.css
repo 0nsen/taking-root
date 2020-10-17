@@ -1,5 +1,6 @@
 .collection {
     font-family: 'Roboto', sans-serif;
+    margin-top: 7rem;
 }
 
 .collection__header {
@@ -39,4 +40,5 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    max-width: 1220px;
 }

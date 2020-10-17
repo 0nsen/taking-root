@@ -1,45 +1,52 @@
 import React from 'react'
 import './Item.css'
-import {aeonium, sedum, cactus, unusual} from '../Product-data/product-data'
+import {connect} from 'react-redux';
+import {addToCart} from '../actions/cartActions';
 
 class Item extends React.Component {
     constructor(props) {
         super(props);
 
-        const productList = aeonium.concat(sedum, cactus, unusual);
+        const productList = props.aeonium.concat(props.sedum, props.cactus, props.unusual);
         const itemName = (props.link).toUpperCase().replaceAll("-", " ");
-        this.product = productList.find(product => product.name === itemName);
+        const product = productList.find(product => product.name === itemName);
 
         this.state = {
-            selected_price: this.product.prices[0]
-        }
+            product: product,
+            selected_price: product.prices[0]
+        };
 
-        this.selectPrice = this.selectPrice.bind(this);
+        this.selectPrice = this.selectPrice.bind(this);        
     }
 
     selectPrice(e) {
         this.setState({
-            selected_price: this.product.prices[this.product.sizes.indexOf(e.target.value)]
+            selected_price: this.state.product.prices[this.state.product.sizes.indexOf(e.target.value)]
         });
     }
+
+    handleClick(key, price) {
+        this.props.addToCart(key, price);  
+    }
     
-    render() {
+    render() {  
         return (
             <section className="product-page">
                 <div className="product-image">
-                    <img alt="plant" src={require("../Product-data/" + this.product.imageSrc)} />
+                    <img alt="plant" src={require("../Product-data/" + this.state.product.imageSrc)} />
                 </div>
                 
                 <div className="product-info">
-                    <h1 className="product-name">{this.product.name}</h1>
+                    <h1 className="product-name">{this.state.product.name}</h1>
                     <h3>${this.state.selected_price}</h3>
                     
                     <form className="sizes">
                         <h5>SIZE</h5>
                         <div className="sizes__buttons">
-                            {this.product.sizes.map(size => {
+                            {this.state.product.sizes.map((size, i = 0) => {
+                                i++
                                 return (
-                                    <div>
+                                    <div id={`size-${i}`}>
                                         <input onClick={this.selectPrice} name="size" id={size.replaceAll(" ", "-")} type="radio" value={size}/>
                                         <label for={size.replaceAll(" ", "-")}>{size}</label>
                                     </div>
@@ -53,11 +60,26 @@ class Item extends React.Component {
                         <input type="number" min="1" defaultValue="1"/>
                     </div>
                     
-                    <button className="add-to-cart">ADD TO CART</button>
+                    <button onClick={() => {this.handleClick(this.state.product.key, this.state.selected_price)}} className="add-to-cart">ADD TO CART</button>
                 </div>
             </section>
-        );
+        );  
     }
 }
 
-export default Item;
+const mapStateToProps = (state) => {
+    return {
+        aeonium: state.aeonium,
+        sedum: state.sedum,
+        cactus: state.cactus,
+        unusual: state.unusual,
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (key, selected_price) => {dispatch(addToCart(key, selected_price))}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Item);

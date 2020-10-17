@@ -2,6 +2,7 @@
     background-image: url("shallow-focus-photography-of-green-leafed-plants-1207966.jpg");
     font-family: 'Roboto', sans-serif;
     background-size: cover;
+    margin-top: 7rem;
     height: 85vh;
     display: flex;
     flex-direction: column;
@@ -38,6 +39,8 @@
 
 .shop-section {
     font-family: 'Roboto', sans-serif;
+    max-width: 1520px;
+    margin: auto;
 }
 
 .shop-section h1 {

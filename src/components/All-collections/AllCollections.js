@@ -1,13 +1,11 @@
 import React from 'react'
 import './AllCollection.css'
 import '../About/About.css'
-import {aeonium, cactus, sedum, unusual} from '../Product-data/product-data'
 import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
 import {readMore} from '../utility'
+import { connect } from 'react-redux';
 
-export default function AllCollections() {
-    const categories = [aeonium[0], cactus[0], sedum[0], unusual[0]];
-
+function AllCollections(props) {
     return (
         <div className="collection">
             <header className="collection__header">
@@ -52,7 +50,7 @@ export default function AllCollections() {
             </article>
 
             <section className="showcase">
-                {categories.map((category, i = 0) => {
+                {props.categories.map((category, i = 0) => {
                     i++;
                     return (
                         <CategoryShowcase key={`CAT-${i}`} imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type} />
@@ -62,3 +60,11 @@ export default function AllCollections() {
         </div>
     );
 }
+
+const mapStateToProps = (state) =>  {
+    return {
+        categories: [state.aeonium[0], state.sedum[4], state.cactus[2], state.unusual[3]]
+    }
+};
+
+export default connect(mapStateToProps)(AllCollections);
