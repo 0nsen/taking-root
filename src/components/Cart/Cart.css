@@ -58,6 +58,43 @@
     transition: ease 0.2s;
 }
 
+.item-in-cart {
+    font-family: 'Roboto', sans-serif;
+    border: red solid 1px;
+    display: grid;
+    grid-template: repeat(4, 50px) / 30% 70%;
+    margin-bottom: 1rem;
+}
+
+.item-in-cart__img {
+    border: blue solid 1px;
+    width: auto;
+    height: 100%;
+    grid-row: 1 / span 4;
+    grid-column: 1 / 2;
+}
+
+.item-in-cart__name {
+    font-size: 1.3rem;
+    border: blue solid 1px;
+}
+
+.item-in-cart__size {
+    padding: 0.8rem;
+    border: blue solid 1px;
+}
+
+.item-in-cart__price {
+    padding: 0.8rem;
+    border: blue solid 1px;
+}
+
+.item-in-cart__quantity {
+    padding: 0.8rem;
+    border: blue solid 1px;
+}
+
+
 @media only screen and (max-width: 720px) {
     .checkout {
         flex-direction: column;

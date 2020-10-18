@@ -13,7 +13,7 @@ class Item extends React.Component {
 
         this.state = {
             product: product,
-            selected_price: product.prices[0]
+            selected_price_index: 0
         };
 
         this.selectPrice = this.selectPrice.bind(this);        
@@ -21,12 +21,12 @@ class Item extends React.Component {
 
     selectPrice(e) {
         this.setState({
-            selected_price: this.state.product.prices[this.state.product.sizes.indexOf(e.target.value)]
+            selected_price_index: this.state.product.sizes.indexOf(e.target.value)
         });
     }
 
-    handleClick(key, price) {
-        this.props.addToCart(key, price);  
+    handleClick(key, price_index) {
+        this.props.addToCart(key, price_index);  
     }
     
     render() {  
@@ -38,7 +38,7 @@ class Item extends React.Component {
                 
                 <div className="product-info">
                     <h1 className="product-name">{this.state.product.name}</h1>
-                    <h3>${this.state.selected_price}</h3>
+                    <h3>${this.state.product.prices[this.state.selected_price_index]}</h3>
                     
                     <form className="sizes">
                         <h5>SIZE</h5>
@@ -60,7 +60,7 @@ class Item extends React.Component {
                         <input type="number" min="1" defaultValue="1"/>
                     </div>
                     
-                    <button onClick={() => {this.handleClick(this.state.product.key, this.state.selected_price)}} className="add-to-cart">ADD TO CART</button>
+                    <button onClick={() => {this.handleClick(this.state.product.key, this.state.selected_price_index)}} className="add-to-cart">ADD TO CART</button>
                 </div>
             </section>
         );  
@@ -78,7 +78,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (key, selected_price) => {dispatch(addToCart(key, selected_price))}
+        addToCart: (key, selected_price_index) => {dispatch(addToCart(key, selected_price_index))}
     }
 }
 

@@ -8,27 +8,31 @@ const initState = {
     cactus: cactus,
     unusual: unusual,
     addedItems: [],
-    total: 0
+    total: 0,
+    selected_index: []
 };
 
 const cartReducer = (state = initState, action) => {
     if (action.type === ADD_TO_CART) {
-        let addedItem = state.all_plants.find(item => item.key === action.key);
+        let added_item = state.all_plants.find(item => item.key === action.key);
         let existed_item = state.addedItems.find(item => item.key === action.key);
         if (existed_item) {
-            return {
+            added_item.quantity += 1;
+            let newTotal = Number((state.total + existed_item.prices[action.price_index]).toFixed(2));
+            return {    
                 ...state,
-                total: state.total + action.price
+                total: newTotal,
+                selected_index: [...state.selected_index, action.price_index]
             }
         }
         else {
-            addedItem.quantity = 1;
-            let newTotal = state.total + action.price;
-            console.log("added");
+            added_item.quantity = 1;
+            let newTotal = Number((state.total + added_item.prices[action.price_index]).toFixed(2));
             return {
                 ...state,
-                addedItems: [...state.addedItems, addedItem],
-                total: newTotal
+                addedItems: [...state.addedItems, added_item],
+                total: newTotal,
+                selected_index: [...state.selected_index, action.price_index]
             }
         }
     }
