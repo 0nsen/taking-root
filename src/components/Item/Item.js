@@ -7,26 +7,45 @@ class Item extends React.Component {
     constructor(props) {
         super(props);
 
-        const productList = props.aeonium.concat(props.sedum, props.cactus, props.unusual);
         const itemName = (props.link).toUpperCase().replaceAll("-", " ");
-        const product = productList.find(product => product.name === itemName);
+        const product = this.props.all_plants.find(product => product.name === itemName);
 
         this.state = {
             product: product,
-            selected_price_index: 0
+            selected_index: 0,
+            quantity: 1,
         };
 
-        this.selectPrice = this.selectPrice.bind(this);        
+        this.selectIndex = this.selectIndex.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+        this.quantityChange = this.quantityChange.bind(this); 
     }
 
-    selectPrice(e) {
+    selectIndex(e) {
         this.setState({
-            selected_price_index: this.state.product.sizes.indexOf(e.target.value)
+            selected_index: this.state.product.sizes.indexOf(e.target.value)
         });
     }
 
-    handleClick(key, price_index) {
-        this.props.addToCart(key, price_index);  
+    quantityChange(e) {
+        this.setState({
+            quantity: e.target.value
+        });
+    }
+
+    handleClick() {
+        this.props.addToCart(   
+            this.state.product.key, 
+            this.state.product.sizes[this.state.selected_index], 
+            this.state.quantity,
+            this.state.product.prices[this.state.selected_index]
+        );
+        console.log(
+            this.state.product.key + " " +
+            this.state.product.sizes[this.state.selected_index] + " " +
+            this.state.quantity + " " +
+            this.state.product.prices[this.state.selected_index]
+        );
     }
     
     render() {  
@@ -38,7 +57,7 @@ class Item extends React.Component {
                 
                 <div className="product-info">
                     <h1 className="product-name">{this.state.product.name}</h1>
-                    <h3>${this.state.product.prices[this.state.selected_price_index]}</h3>
+                    <h3>${this.state.product.prices[this.state.selected_index]}</h3>
                     
                     <form className="sizes">
                         <h5>SIZE</h5>
@@ -47,7 +66,7 @@ class Item extends React.Component {
                                 i++
                                 return (
                                     <div id={`size-${i}`}>
-                                        <input onClick={this.selectPrice} name="size" id={size.replaceAll(" ", "-")} type="radio" value={size}/>
+                                        <input onClick={this.selectIndex} name="size" id={size.replaceAll(" ", "-")} type="radio" value={size}/>
                                         <label for={size.replaceAll(" ", "-")}>{size}</label>
                                     </div>
                                 )
@@ -57,10 +76,10 @@ class Item extends React.Component {
                     
                     <div className='quantity'>
                         <h5>QUANTITY</h5>
-                        <input type="number" min="1" defaultValue="1"/>
+                        <input onChange={this.quantityChange} type="number" min="1" defaultValue="1"/>
                     </div>
                     
-                    <button onClick={() => {this.handleClick(this.state.product.key, this.state.selected_price_index)}} className="add-to-cart">ADD TO CART</button>
+                    <button onClick={this.handleClick} className="add-to-cart">ADD TO CART</button>
                 </div>
             </section>
         );  
@@ -69,16 +88,13 @@ class Item extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        aeonium: state.aeonium,
-        sedum: state.sedum,
-        cactus: state.cactus,
-        unusual: state.unusual,
+        all_plants: state.all_plants
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (key, selected_price_index) => {dispatch(addToCart(key, selected_price_index))}
+        addToCart: (key, size, quantity, price) => {dispatch(addToCart(key, size, quantity, price))}
     }
 }
 

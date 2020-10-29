@@ -94,6 +94,10 @@
     border: blue solid 1px;
 }
 
+.no-item {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
 
 @media only screen and (max-width: 720px) {
     .checkout {
