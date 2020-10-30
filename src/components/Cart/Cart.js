@@ -1,12 +1,15 @@
 import React from 'react';
 import './Cart.css';
 import '../About/About.css'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {removeItem} from '../actions/cartActions'
 
 function Cart(props) {
-    // const handleRemove = (key) => {
-    //     props.removeItem(key)
-    // };
+    const handleRemove = (key, size) => {
+        props.removeItem(key, size);
+        console.log("removed " + key);
+    };
 
     // const handleAddQuantity = (key) => {
     //     props.addQuantity(key)
@@ -23,7 +26,7 @@ function Cart(props) {
             return (
                 <li className="item-in-cart" key={item.key}>
                     <img src={require('../Product-data/' + item.imageSrc)} alt={item.name} className='item-in-cart__img'/>
-                    <h4 className='item-in-cart__name'>{item.name}</h4>
+                    <h4 className='item-in-cart__name'>{item.name}<Link to="/cart"><div onClick={() => {handleRemove(item.key, item.size)}} className='close-mark'></div></Link></h4>
                     <h5 className='item-in-cart__size'>Size: {item.size}</h5>
                     <h5 className='item-in-cart__quantity'>Quantity: {item.quantity}</h5>
                     <h4 className='item-in-cart__price'>${item.price}</h4>
@@ -72,12 +75,11 @@ const mapStateToProps = state =>  {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         removeItem: key => dispatch(removeItem(key)),
-//         addQuantity: key => dispatch(addQuantity(key)),
-//         subtractQuantity: key => dispatch(subtractQuantity(key))
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        removeItem: (key, size) => dispatch(removeItem(key, size)),
+        
+    }
+}
 
-export default connect(mapStateToProps)(Cart);
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

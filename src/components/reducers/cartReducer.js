@@ -46,7 +46,13 @@ const cartReducer = (state = initState, action) => {
             break;
         
         case REMOVE_ITEM:
-
+            let item_to_remove = state.addedItems.find(item => item.key === action.payload.key && item.size === action.payload.size); 
+            state.addedItems.splice(state.addedItems.indexOf(item_to_remove), 1);
+            let newTotal = Number(state.total - (item_to_remove.price * item_to_remove.quantity).toFixed(2));
+            return {
+                ...state,
+                total: newTotal
+            }
             break;
         
         case ADD_QUANTITY:

@@ -6,7 +6,6 @@
 }
 
 .cart-items {
-    border: blue solid 1px;
     width: 74%;
 }
 
@@ -60,36 +59,61 @@
 
 .item-in-cart {
     font-family: 'Roboto', sans-serif;
-    border: red solid 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: rgb(72,197,171) solid 1px;
     display: grid;
     grid-template: repeat(4, 50px) / 30% 70%;
     margin-bottom: 1rem;
 }
 
+.close-mark {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    opacity: 50%;
+}
+
+.close-mark::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-left: black solid 1px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 50%;
+}
+
+.close-mark::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    border-right: black solid 1px;
+    transform: rotate(-45deg);
+    right: 50%;
+}
+
+.close-mark:hover {
+    cursor: pointer;
+    opacity: 100%;
+    background-color: orange;
+}
+
 .item-in-cart__img {
     border: blue solid 1px;
-    width: auto;
-    height: 100%;
+    width: 85%;
+    height: auto;
+    min-width: 100px;
     grid-row: 1 / span 4;
     grid-column: 1 / 2;
 }
 
 .item-in-cart__name {
     font-size: 1.3rem;
-    border: blue solid 1px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.item-in-cart__size {
-    padding: 0.8rem;
-    border: blue solid 1px;
-}
-
-.item-in-cart__price {
-    padding: 0.8rem;
-    border: blue solid 1px;
-}
-
-.item-in-cart__quantity {
+.item-in-cart__size, .item-in-cart__price, .item-in-cart__quantity {
     padding: 0.8rem;
     border: blue solid 1px;
 }
@@ -106,6 +130,23 @@
 
     .cart-items, .buyer-info {
         width: 100%;
+    }
+
+    .item-in-cart {
+        grid-template: repeat(4, 40px) / 30% 70%;
+    }
+
+    .close-mark {
+        min-height: 15px;
+        min-width: 15px;
+    }
+
+    .item-in-cart__name, .item-in-cart__size, .item-in-cart__quantity, .item-in-cart__price {
+        font-size: 0.8rem;
+    }
+
+    .item-in-cart__img {
+        align-self: center;
     }
 
     .buyer-info {
