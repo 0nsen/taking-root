@@ -48,19 +48,36 @@ const cartReducer = (state = initState, action) => {
         case REMOVE_ITEM:
             let item_to_remove = state.addedItems.find(item => item.key === action.payload.key && item.size === action.payload.size); 
             state.addedItems.splice(state.addedItems.indexOf(item_to_remove), 1);
-            let newTotal = Number(state.total - (item_to_remove.price * item_to_remove.quantity).toFixed(2));
+            let remaining_total = Number((state.total - (item_to_remove.price * item_to_remove.quantity)).toFixed(2));
             return {
                 ...state,
-                total: newTotal
+                total: remaining_total
             }
             break;
         
         case ADD_QUANTITY:
-
+            let item_to_add = state.addedItems.find(item => item.key === action.payload.key && item.size == action.payload.size);
+            state.addedItems[state.addedItems.indexOf(item_to_add)].quantity++;
+            let added_total = Number((state.total + item_to_add.price).toFixed(2));
+            return {
+                ...state,
+                total: added_total
+            }
             break;
 
         case SUBTRACT_QUANTITY:
-
+            let item_to_subtract = state.addedItems.find(item => item.key === action.payload.key && item.size == action.payload.size);
+            if (item_to_subtract.quantity > 1) {
+                state.addedItems[state.addedItems.indexOf(item_to_subtract)].quantity--;
+                let subtracted_total = Number((state.total - item_to_subtract.price).toFixed(2));
+                return {
+                    ...state,
+                    total: subtracted_total
+                }
+            }
+            else return {
+                ...state
+            }
             break;
     }
 

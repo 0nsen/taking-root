@@ -95,11 +95,9 @@
 .close-mark:hover {
     cursor: pointer;
     opacity: 100%;
-    background-color: orange;
 }
 
 .item-in-cart__img {
-    border: blue solid 1px;
     width: 85%;
     height: auto;
     min-width: 100px;
@@ -115,7 +113,29 @@
 
 .item-in-cart__size, .item-in-cart__price, .item-in-cart__quantity {
     padding: 0.8rem;
-    border: blue solid 1px;
+}
+
+.left-arrow, .right-arrow {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin: 0 1.5rem;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+    cursor: pointer;
+}
+
+.left-arrow {
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    transform: rotate(-45deg);
+}
+
+.right-arrow {
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    transform: rotate(-45deg);
 }
 
 .no-item {

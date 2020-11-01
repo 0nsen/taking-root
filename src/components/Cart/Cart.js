@@ -3,21 +3,20 @@ import './Cart.css';
 import '../About/About.css'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {removeItem} from '../actions/cartActions'
+import {removeItem, addQuantity, subtractQuantity} from '../actions/cartActions'
 
 function Cart(props) {
     const handleRemove = (key, size) => {
         props.removeItem(key, size);
-        console.log("removed " + key);
     };
 
-    // const handleAddQuantity = (key) => {
-    //     props.addQuantity(key)
-    // };
+    const handleAddQuantity = (key, size) => {
+        props.addQuantity(key, size);
+    };
 
-    // const handleSubtractQuantity = (key) => {
-    //     props.subtractQuantity(key)
-    // }
+    const handleSubtractQuantity = (key, size) => {
+        props.subtractQuantity(key, size);
+    }
 
     let addedItems = props.items.length ? 
     (
@@ -28,7 +27,7 @@ function Cart(props) {
                     <img src={require('../Product-data/' + item.imageSrc)} alt={item.name} className='item-in-cart__img'/>
                     <h4 className='item-in-cart__name'>{item.name}<Link to="/cart"><div onClick={() => {handleRemove(item.key, item.size)}} className='close-mark'></div></Link></h4>
                     <h5 className='item-in-cart__size'>Size: {item.size}</h5>
-                    <h5 className='item-in-cart__quantity'>Quantity: {item.quantity}</h5>
+                    <h5 className='item-in-cart__quantity'>Quantity: <span onClick={() => {handleSubtractQuantity(item.key, item.size)}} className="left-arrow"></span> {item.quantity} <span onClick={() => (handleAddQuantity(item.key, item.size))} className="right-arrow"></span></h5>
                     <h4 className='item-in-cart__price'>${item.price}</h4>
                 </li>
             )
@@ -78,7 +77,8 @@ const mapStateToProps = state =>  {
 const mapDispatchToProps = dispatch => {
     return {
         removeItem: (key, size) => dispatch(removeItem(key, size)),
-        
+        addQuantity: (key, size) => dispatch(addQuantity(key, size)),
+        subtractQuantity: (key, size) => dispatch(subtractQuantity(key, size))
     }
 }
 
