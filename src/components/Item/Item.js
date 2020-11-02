@@ -40,12 +40,6 @@ class Item extends React.Component {
             this.state.quantity,
             this.state.product.prices[this.state.selected_index]
         );
-        console.log(
-            this.state.product.key + " " +
-            this.state.product.sizes[this.state.selected_index] + " " +
-            this.state.quantity + " " +
-            this.state.product.prices[this.state.selected_index]
-        );
     }
     
     render() {  

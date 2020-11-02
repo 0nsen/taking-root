@@ -5,23 +5,6 @@
     position: relative;
 }
 
-.add-to-cart__button {
-    font-family: 'Roboto', sans-serif;
-    position: absolute;
-    right: 0;
-    opacity: 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 50%;
-    height: 10%;
-    background-color: rgb(72,197,171);
-    color: white;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
 .item-showcase:hover .add-to-cart__button {
     opacity: 100%;
     transition: ease 0.2s;
