@@ -4,6 +4,7 @@ import ItemShowcase from '../ItemShowcase/ItemShowcase'
 import '../All-collections/AllCollections'
 import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 function Home(props) {
     const new_arrival = [props.cactus[5], props.sedum[5], props.aeonium[5], props.unusual[5]];
@@ -17,7 +18,7 @@ function Home(props) {
                     <br/> 
                     <em>SUCCULENTS</em>
                 </h2>
-                <button>SHOP</button>
+                <Link to='/all-collections' style={{width: '10%', height: '10%', textDecoration: 'none'}}><button>SHOP</button></Link>
             </div>
 
             <div className="shop-section">
