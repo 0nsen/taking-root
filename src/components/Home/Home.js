@@ -10,6 +10,13 @@ function Home(props) {
     const new_arrival = [props.cactus[5], props.sedum[5], props.aeonium[5], props.unusual[5]];
     const our_collections = [props.aeonium[0], props.cactus[0], props.sedum[0], props.unusual[0]];
 
+    const style = {
+        width: '10%',
+        height: '10%',
+        textDecoration: 'none',
+        minWidth: '200px'
+    }
+
     return (
         <div>
             <div className="shop-banner">
@@ -18,7 +25,7 @@ function Home(props) {
                     <br/> 
                     <em>SUCCULENTS</em>
                 </h2>
-                <Link to='/all-collections' style={{width: '10%', height: '10%', textDecoration: 'none'}}><button>SHOP</button></Link>
+                <Link to='/all-collections' style={style}><button>SHOP</button></Link>
             </div>
 
             <div className="shop-section">

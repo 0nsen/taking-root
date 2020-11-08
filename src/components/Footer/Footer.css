@@ -5,12 +5,10 @@ footer {
     justify-content: space-around;
     background-color:rgb(27,31,35);
     color: rgb(127,140,141);
-    padding: 4em;
+    padding: 4rem;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
-
-
 
 footer h5 {
     margin-top: 1em;
@@ -39,27 +37,15 @@ footer h5:hover {
     color: white;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 480px) {
     footer {
-        flex-wrap: wrap;
         line-height: 1.5rem;
+        flex-direction: column;
+        padding: 2rem;
     }
 
-    .information, .customer-service {
-        width: 50%;
-    }
-
-    .information {
-        float: left;
-    }
-
-    .customer-service {
-        float: right;
-        text-align: right;
-    }
-
-    .follow-us {
-        margin-top: 2rem;
+    .information, .customer-service, .follow-us {
         text-align: center;
+        margin: 1rem 0;
     }
 }

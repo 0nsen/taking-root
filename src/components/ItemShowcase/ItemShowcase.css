@@ -2,7 +2,6 @@
     height: 350px;
     width: 290px;
     margin: 20px 6px;
-    position: relative;
 }
 
 .item-showcase:hover .add-to-cart__button {
@@ -29,14 +28,23 @@
     transition: ease 0.2s;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 480px) {
     .item-showcase {
-        width: 180px;
-        height: 240px;
-        font-size: 0.8rem;
+        width: 46%;
+        height: 190px;
+        font-size: 0.7rem;
+        margin: 20px 2%;
     }
     
     .item-showcase:hover .add-to-cart__button {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .item-showcase {
+        width: 30%;
+        height: 300px;
+        margin: 20px 1.6%;
     }
 }

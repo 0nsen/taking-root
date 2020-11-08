@@ -72,12 +72,22 @@
     transition: ease 0.2s;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 480px) {
     .contact {
         flex-wrap: wrap;
     }
 
     .contact__form, .contact__info {
         width: 100%;
+    }
+
+    .contact__form button {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .contact__form button {
+        letter-spacing: 0;
     }
 }
