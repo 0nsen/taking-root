@@ -40,6 +40,11 @@ class Item extends React.Component {
             this.state.quantity,
             this.state.product.prices[this.state.selected_index]
         );
+
+        document.querySelector(".added-popup").style.display = 'block';
+        setTimeout(() => {
+            document.querySelector(".added-popup").style.display = 'none';
+        }, 1000);
     }
     
     render() {  
@@ -74,6 +79,10 @@ class Item extends React.Component {
                     </div>
                     
                     <button onClick={this.handleClick} className="add-to-cart">ADD TO CART</button>
+                </div>
+
+                <div className='added-popup'>
+                    Added to cart!
                 </div>
             </section>
         );  

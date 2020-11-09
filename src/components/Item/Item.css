@@ -107,6 +107,18 @@
     cursor: pointer;
 }
 
+.added-popup {
+    display: none;
+    position: fixed;
+    background-color: rgb(72,197,171);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1%;
+    font-size: 1.3rem;
+}
+
 @media screen and (max-width: 480px) {
     .product-page {
         display: flex;

@@ -22,8 +22,6 @@ const cartReducer = (state = initState, action) => {
                 quantity: action.payload.quantity,
                 price: action.payload.price
             };
-
-            console.log("added item: " + added_item.key + " " + added_item.size + " " + added_item.quantity + " " + added_item.price);
             
             let existed_item = state.addedItems.find(item => item.key === action.payload.key && item.size === action.payload.size);
             
