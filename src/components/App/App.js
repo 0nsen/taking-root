@@ -30,6 +30,7 @@ function App() {
                 <Route exact path='/all-collections' component={AllCollections}/>
                 <Route path='/all-collections/:routeID' component={routeChange}/>
                 
+                
             </Switch>
 
             <Footer/>

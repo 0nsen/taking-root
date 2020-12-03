@@ -50,7 +50,7 @@ button.upper-link:hover {
     color: white;
     height: 100%;
     font-family: 'Berkshire Swash', cursive;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     padding-top: 1rem;
     text-align: center;
 }
@@ -196,5 +196,19 @@ button.upper-link:hover {
 
     .upper-linker {
         width: 10%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1128px) {
+    #shop-name {
+        font-size: 2rem;
+        padding-top: 0.5rem;
+    }
+}
+
+@media only screen and (min-width: 1128px) and (max-width: 1353px){
+    #shop-name {
+        font-size: 2.4rem;
+        padding-top: 0;
     }
 }

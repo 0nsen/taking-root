@@ -4,6 +4,7 @@ import '../About/About.css'
 import CategoryShowcase from '../ItemShowcase/CategoryShowcase';
 import {readMore} from '../utility'
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
 
 function AllCollections(props) {
     return (
@@ -52,8 +53,14 @@ function AllCollections(props) {
             <section className="showcase">
                 {props.categories.map((category, i = 0) => {
                     i++;
+                    const link = category.type.toLowerCase();
                     return (
-                        <CategoryShowcase key={`CAT-${i}`} imageSrc={require('../Product-data/' + category.imageSrc)} name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type} />
+                        <Link to={`/all-collections/${link}`} className="item-showcase">
+                            <CategoryShowcase   key={`CAT-${i}`} 
+                                                imageSrc={require('../Product-data/' + category.imageSrc)} 
+                                                name={category.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : category.type}
+                            />
+                        </Link>
                     );
                 })}
             </section>

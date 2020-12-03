@@ -43,7 +43,14 @@ function Home(props) {
                 <div className="showcase">
                     {our_collections.map((item, i = 0) => {
                         i++;
-                        return <CategoryShowcase key={`CAT-${i}`} imageSrc={require('../Product-data/' + item.imageSrc)} name={item.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : item.type}/>
+                        const link = item.type.toLowerCase();
+                        return (
+                            <Link to={`/all-collections/${link}`} className="item-showcase">
+                                <CategoryShowcase   key={`CAT-${i}`} 
+                                                    imageSrc={require('../Product-data/' + item.imageSrc)} 
+                                                    name={item.type === 'UNUSUAL' ? 'UNUSUAL SPECIES' : item.type}/>
+                            </Link>
+                        )     
                     })}
                 </div>
             </div>
